@@ -1,22 +1,37 @@
-.App {
+body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.container { 
+text-align: center;
+/* Add the blur effect */
+/* filter: blur(8px); */
+
+/* Full height */
+/* height: 100%; */
+
+/* Center and scale the image nicely */
+/* background-position: center; */
+/* background-repeat: no-repeat; */
+/* background-size: cover; */
+  /* width: 100%; */
+  /* background-image: url("../Assesst//img/photographer.jpg"); */
+} 
+.section {
   text-align: center;
+  width: 55%;
+  height: 60vh;
+  margin: auto;
+  background: lightgray;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+.btn {
+margin: 5px
 }
