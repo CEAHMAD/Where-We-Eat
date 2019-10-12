@@ -47,7 +47,7 @@ import logo from './Assesst/img/logo.png';
    getResturant = async () => {
 
     //  const latLng = this.
-    let resturantData =  await GetResturant()
+    let resturantData =  await GetResturant(this.state.currentLocation.lat, this.state.currentLocation.lng)
     console.log(resturantData);
     this.setState({ suggest: true, resturantData })
     
@@ -62,14 +62,14 @@ import logo from './Assesst/img/logo.png';
     <div className="container">
 					<img src={logo} />
 				<div className="section">
-        <button className="btn" onClick={this.getResturant}>suggist</button>
+        <button className="btn" onClick={this.getResturant}>اقترح</button>
       { this.state.suggest?
       <div>
-      <h1>name: {resturantData.name}</h1>
+      <h1>{resturantData.name}</h1>
       <h3>{resturantData.cat}</h3>
       <h5>{resturantData.rating}</h5>
-      <h4><a href={resturantData.link}>Forsequare</a></h4>
-      <h4><a href={`https://maps.google.com/?q=${resturantData.lat},${resturantData.lon}`}>Google Map</a></h4>
+      <h4><a target="_blank" href={resturantData.link}>Forsequare</a></h4>
+      <h4><a target="_blank" href={`https://maps.google.com/?q=${resturantData.lat},${resturantData.lon}`}>Google Map</a></h4>
       <Map mapBound={this.state.currentLocation} markerPostion={{lat: +resturantData.lat, lng: +resturantData.lon}} />
       </div>
     : ""}
